@@ -19,6 +19,7 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "nodemon": "^3.1.0",
+    "path": "^0.12.7",
     "prisma": "^5.14.0",
     "quill": "^2.0.2",
     "react-quill": "^2.0.0"

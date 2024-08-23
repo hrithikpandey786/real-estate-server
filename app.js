@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const authRoute = require("./routes/auth.route");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -10,7 +11,7 @@ const chatsRoute = require("./routes/chat.route.js");
 const messageRoute = require("./routes/message.route.js");
 const PORT = process.env.PORT || 8800
 
-app.use(express.static("../Frontend"));
+// app.use(express.static("../Frontend"));
 
 app.use(express.static(path.join(__dirname, '../Frontend')));
 
