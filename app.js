@@ -11,6 +11,9 @@ const messageRoute = require("./routes/message.route.js");
 const PORT = process.env.PORT || 8800
 
 app.use(express.static("../Frontend"));
+
+app.use(express.static(path.join(__dirname, '../Frontend')));
+
 app.use(cors({origin: process.env.CLIENT_URL, credentials: true}));
 app.use(express.json());
 app.use(cookieParser());
@@ -21,7 +24,9 @@ app.use("/api/users", userRoute);
 app.use("/api/chats", chatsRoute);
 app.use("/api/message", messageRoute);
 
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Frontend/index.html'));
+});
 
 app.listen(PORT, ()=>{
     console.log(`Server is listening on port ${PORT}...`);
